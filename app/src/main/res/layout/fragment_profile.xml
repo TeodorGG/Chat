@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment"
+    android:background="@color/background_color"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <RelativeLayout
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center">
+                <androidx.cardview.widget.CardView 
+                    android:layout_width="176dp"
+                    android:layout_height="176dp"
+                    app:cardCornerRadius="88dp"
+                    >
+                    <ImageView
+                        android:layout_width="175dp"
+                        android:layout_height="175dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/profile_user_image"
+                        android:src="@drawable/ic_profile"
+                        android:background="#898989"
+                        android:contentDescription="des"
+                        tools:ignore="HardcodedText" />
+                </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_pencil"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/float_button_change_image"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                />
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:id="@+id/profile_name_user"
+                android:layout_centerInParent="true"
+                />
+            <ImageView
+                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:src="@drawable/ic_pencil"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/profile_change_name"
+                android:layout_marginEnd="25dp"
+                android:contentDescription="pencil" />
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:maxWidth="300dp"
+                android:text="about"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:id="@+id/profile_about_user"
+                android:layout_centerInParent="true"
+                />
+            <ImageView
+                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:id="@+id/profile_change_about"
+                android:src="@drawable/ic_pencil"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"
+                android:contentDescription="pencil" />
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="log out"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:id="@+id/go_out_button"/>
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
