@@ -199,7 +199,7 @@ public class HomeFragment extends Fragment {
 
         mDataBaseRef = FirebaseDatabase.getInstance().getReference("Notification").child(docID).child(notification_id);
 
-        String time = LocalDateTime.now().getHour()+":"+LocalDateTime.now().getMinute();
+        String time = "11:11"; //LocalDateTime.now().getHour()+":"+LocalDateTime.now().getMinute();
 
         NotificationElement element = new NotificationElement(imageUrl, notification_message, time, false, userID, docID, notification_id, name,1 );
         mDataBaseRef.setValue(element);
@@ -214,24 +214,24 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mChatElement.clear();
-                int ver = 1;
+                //int ver = 1;
                  for(DataSnapshot postSnapshot : snapshot.getChildren()){
 
                      String chatInfoDirectoryName = postSnapshot.getKey();
+//
+//                     for(DataSnapshot verPosition : snapshot.getChildren()) {
+                         if (!chatInfoDirectoryName.contains("|") ) {
+//                             int position = Integer.parseInt(verPosition.child("user_numberPosition").getValue().toString());
+//
+//                             if (position == ver) {
 
-                     for(DataSnapshot verPosition : snapshot.getChildren()) {
-
-                         int position = Integer.parseInt(verPosition.child("User_numberPosition").getValue().toString());
-
-                         if (!chatInfoDirectoryName.contains("|") && position == ver) {
-
-                             ChatElement element = postSnapshot.getValue(ChatElement.class);
-                             mChatElement.add(element);
-                             ver++;
-
-                         }
+                                 ChatElement element = postSnapshot.getValue(ChatElement.class);
+                                 mChatElement.add(element);
+                                 //ver++;
+                             }
+                        // }
                      }
-                 }
+                 //}
 
 
 

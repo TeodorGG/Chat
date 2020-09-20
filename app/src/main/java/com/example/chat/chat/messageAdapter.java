@@ -34,7 +34,6 @@ public class messageAdapter extends ArrayAdapter<MessageElement> {
 
     public messageAdapter(@NonNull Activity context, List<MessageElement> resource) {
         super(context, R.layout.card_view_message, resource);
-
         this.mContext = context;
         this.mMessageElement = resource;
     }

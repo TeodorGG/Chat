@@ -56,14 +56,15 @@ public class chatActivity extends AppCompatActivity {
     private FirebaseUser user =  FirebaseAuth.getInstance().getCurrentUser();
     private String userID;
     FirebaseFirestore firestore;
-
-    String chatUserID = getIntent().getStringExtra("chatUserID");
+    String chatUserID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        chatUserID = getIntent().getStringExtra("chatUserID");
 
         userID = user.getUid();
         firestore = FirebaseFirestore.getInstance();
@@ -129,7 +130,7 @@ public class chatActivity extends AppCompatActivity {
         if (!"".equals(messageText)){
             String id =  mDataBaseRef.push().getKey();
 
-            String time = LocalDateTime.now().getHour()+":"+LocalDateTime.now().getMinute();
+            String time = "11:11";//LocalDateTime.now().getHour()+":"+LocalDateTime.now().getMinute();
 
             mDataBaseRef = FirebaseDatabase.getInstance().getReference("ListChatForUser").child(userID).child("|"+chatUserID).child(id);
             MessageElement mElement = new MessageElement(userID, chatUserID, messageText, time, 1 );
@@ -156,7 +157,7 @@ public class chatActivity extends AppCompatActivity {
                     mMessageElement.add(element);
                 }
 
-                messageAdapter adapter = new messageAdapter(getParent(), mMessageElement);
+                messageAdapter adapter = new messageAdapter(chatActivity.this, mMessageElement);
                 listView_chat.setAdapter(adapter);
 
             }

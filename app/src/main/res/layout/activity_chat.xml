@@ -105,7 +105,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="75dp" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="@color/background_color"
@@ -144,7 +144,7 @@
         </LinearLayout>
 
 
-    </com.google.android.material.bottomappbar.BottomAppBar>
+    </RelativeLayout>
 
 
 </RelativeLayout>

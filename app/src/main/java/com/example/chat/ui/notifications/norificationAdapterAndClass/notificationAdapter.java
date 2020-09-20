@@ -137,7 +137,7 @@ public class notificationAdapter extends ArrayAdapter<NotificationElement> {
     }
 
     private String getCurrentTime() {
-        return java.time.LocalTime.now().toString();
+        return "11:11"; //java.time.LocalTime.now().toString();
     }
 
     private void getNeedElementFromFirestore(String not_id_reciver) {
